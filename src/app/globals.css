@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f5f0;
+  --bg-card: #ffffff;
+  --fg: #1a1a1a;
+  --fg-muted: #6b6560;
+  --brand: #0d7377;
+  --brand-light: #e6f3f3;
+  --border: #e5e0d8;
+  --danger: #c0392b;
+  --danger-light: #fbeae8;
+  --success: #27ae60;
+  --success-light: #e8f8f0;
+  --amber: #d4a017;
+  --amber-light: #fdf5e0;
+  --blue: #2980b9;
+  --blue-light: #e8f0f8;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141210;
+    --bg-card: #1e1c18;
+    --fg: #e8e4de;
+    --fg-muted: #9a948c;
+    --brand: #2bb5b8;
+    --brand-light: #162e2e;
+    --border: #2e2a24;
+    --danger: #e74c3c;
+    --danger-light: #2e1a18;
+    --success: #2ecc71;
+    --success-light: #1a2e20;
+    --amber: #f0c040;
+    --amber-light: #2e2810;
+    --blue: #5dade2;
+    --blue-light: #182030;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+[data-theme="dark"] {
+  --bg: #141210;
+  --bg-card: #1e1c18;
+  --fg: #e8e4de;
+  --fg-muted: #9a948c;
+  --brand: #2bb5b8;
+  --brand-light: #162e2e;
+  --border: #2e2a24;
+  --danger: #e74c3c;
+  --danger-light: #2e1a18;
+  --success: #2ecc71;
+  --success-light: #1a2e20;
+  --amber: #f0c040;
+  --amber-light: #2e2810;
+  --blue: #5dade2;
+  --blue-light: #182030;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-brand: var(--brand);
+  --color-brand-light: var(--brand-light);
+  --color-border: var(--border);
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-amber: var(--amber);
+  --color-amber-light: var(--amber-light);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

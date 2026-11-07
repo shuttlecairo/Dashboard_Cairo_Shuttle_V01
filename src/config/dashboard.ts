@@ -1,0 +1,103 @@
+import type { Role } from "@/types/entities";
+import {
+    Crosshair,
+    CalendarDays,
+    Users,
+    Truck,
+    Briefcase,
+    MapPin,
+    Building,
+    Navigation,
+    DollarSign,
+    Map,
+    Car,
+    BarChart3,
+    FileText,
+    UserCheck,
+    Hotel,
+    LifeBuoy,
+    AlertTriangle,
+    TrendingUp,
+    ClipboardList,
+} from "lucide-react";
+
+// ── Role config ──
+export const ROLES: Record<Role, { label: string; items: { key: string; icon: string; label: string }[] }> = {
+    admin: {
+        label: "Super Admin",
+        items: [
+            { key: "overview", icon: "chart", label: "Overview" },
+            { key: "accounting", icon: "dollar", label: "Accounting" },
+            { key: "live-tracking", icon: "map", label: "Live Tracking" },
+            { key: "routes", icon: "route", label: "Routes" },
+            { key: "trips", icon: "nav", label: "Trips" },
+            { key: "bookings", icon: "booking", label: "Bookings" },
+            { key: "drivers", icon: "driver", label: "Drivers" },
+            { key: "fleet", icon: "fleet", label: "Fleet" },
+            { key: "b2b-clients", icon: "b2b", label: "B2B Clients" },
+            { key: "b2b", icon: "file", label: "B2B Requests" },
+            { key: "partners", icon: "clipboard", label: "Partners" },
+            { key: "support", icon: "ticket", label: "Support" },
+            { key: "analytics", icon: "chart2", label: "Analytics" },
+            // { key: "events", icon: "event", label: "Events" },
+            // { key: "hotel-dash", icon: "hotel", label: "Hotels" },
+        ],
+    },
+    b2b: {
+        label: "B2B Client",
+        items: [
+            { key: "b2b-overview", icon: "chart", label: "Overview" },
+            // { key: "b2b", icon: "file", label: "Requests" },
+            { key: "b2b-tracking", icon: "map", label: "Live Tracking" },
+            { key: "b2b-invoices", icon: "dollar", label: "Invoices" },
+        ],
+    },
+    partner: {
+        label: "Bus Partner",
+        items: [
+            { key: "partner-overview", icon: "chart", label: "Overview" },
+            { key: "partner-vehicles", icon: "fleet", label: "Vehicles" },
+            { key: "partner-drivers", icon: "driver", label: "Drivers" },
+            { key: "partner-accounting", icon: "dollar", label: "Accounting" },
+            { key: "partner-issues", icon: "alert", label: "Issues" },
+            // { key: "partner-support", icon: "ticket", label: "Support" },
+        ],
+    },
+    driver: { label: "Driver", items: [{ key: "driver-dash", icon: "nav", label: "Dashboard" }] },
+    // event: { label: "Event Partner", items: [{ key: "events", icon: "event", label: "Dashboard" }] },
+    // hotel: { label: "Hotel Partner", items: [{ key: "hotel-dash", icon: "hotel2", label: "Dashboard" }] },
+};
+
+export const ICON_MAP: Record<string, React.ComponentType<{ className?: string; size?: number }>> = {
+    route: Crosshair,
+    booking: CalendarDays,
+    driver: Users,
+    fleet: Truck,
+    b2b: Briefcase,
+    event: MapPin,
+    hotel: Building,
+    hotel2: Hotel,
+    nav: Navigation,
+    dollar: DollarSign,
+    map: Map,
+    car: Car,
+    chart: BarChart3,
+    file: FileText,
+    usercheck: UserCheck,
+    ticket: LifeBuoy,
+    alert: AlertTriangle,
+    chart2: TrendingUp,
+    clipboard: ClipboardList,
+};
+
+export const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "8px 12px",
+    border: "1px solid var(--border)",
+    borderRadius: "var(--radius-sm)",
+    background: "var(--bg)",
+    color: "var(--fg)",
+    fontSize: ".85rem",
+    fontFamily: "inherit",
+    outline: "none",
+};
